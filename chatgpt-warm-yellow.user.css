@@ -1,0 +1,849 @@
+/* ==UserStyle==
+@name           ChatGPT Warm Yellow
+@namespace      aeonsong-chatgpt-warm-yellow
+@version        1.0.0
+@description    Warm cream light theme + warm charcoal dark theme for ChatGPT, tuned for long reading, coding, and research sessions.
+@author         aeonsong
+@homepageURL    https://github.com/aeonsong/chatgpt-warm-yellow
+@supportURL     https://github.com/aeonsong/chatgpt-warm-yellow/issues
+@license        MIT
+
+@var color warm-accent "Accent color" "#D97706"
+@var checkbox dynamic-user-message "Dynamic user message color" 1
+
+==/UserStyle== */
+
+@-moz-document domain("chatgpt.com") {
+
+    :root.light {
+        color-scheme: light !important;
+
+        --bg-main: #FDF6E3;
+        --sidebar-bg: #F8F0D9;
+        --surface-bright: #FEFBF3;
+        --surface-low: #FBF5E6;
+        --surface-medium: #F8F0D9;
+        --surface-high: #F3EADF;
+        --surface-highest: #EDE2D1;
+
+        --sidebar-button-hover: #F3EADF;
+        --sidebar-button-active: #EFE4D0;
+
+        --message-bg: #F3E8CF;
+        --user-message-bg: #F3E5BC;
+
+        --text-main: #4F4A45;
+        --text-secondary-color: #655F5A;
+        --text-tertiary-color: #8A817A;
+        --text-placeholder: #9E9690;
+
+        --border-color: #DDD4C6;
+        --border-enabled-color: #C9BDAA;
+
+        --scroll-bg: #D8CCB8;
+        --scroll-hover: #C7B8A2;
+
+        --enabled-button-bg: var(--warm-accent);
+        --disabled-button-bg: #E9DECB;
+        --disabled-button-text: #9A8F81;
+
+        --selection-bg: #F1E2B9;
+
+        --code-bg: #F6ECD0;
+        --code-header-bg: #F2E6C7;
+        --code-inline-bg: #F0E3C4;
+        --code-text: #5F747B;
+        --code-border: #E0D2B4;
+
+        --focus-color: #D79B43;
+        --accent-effective: var(--warm-accent);
+
+        --bg-primary: var(--sidebar-bg) !important;
+        --bg-secondary: var(--surface-medium) !important;
+        --bg-tertiary: var(--surface-high) !important;
+        --bg-elevated-primary: var(--surface-bright) !important;
+        --bg-elevated-secondary: var(--sidebar-bg) !important;
+        --bg-tooltip: var(--surface-high) !important;
+
+        --sidebar-surface-primary: var(--sidebar-bg) !important;
+        --sidebar-surface-secondary: var(--sidebar-button-hover) !important;
+        --sidebar-surface-tertiary: var(--surface-high) !important;
+
+        --main-surface-primary: var(--bg-main) !important;
+        --main-surface-secondary: var(--surface-medium) !important;
+        --main-surface-tertiary: var(--surface-high) !important;
+
+        --message-surface: var(--message-bg) !important;
+
+        --surface-primary: var(--bg-main) !important;
+        --surface-secondary: var(--surface-medium) !important;
+        --surface-tertiary: var(--surface-high) !important;
+        --surface-hover: var(--surface-high) !important;
+
+        --text-primary: var(--text-main) !important;
+        --text-secondary: var(--text-secondary-color) !important;
+        --text-tertiary: var(--text-tertiary-color) !important;
+
+        --border-light: var(--border-color) !important;
+        --border-medium: var(--border-enabled-color) !important;
+
+        --theme-secondary-btn-bg: var(--surface-high) !important;
+        --theme-submit-btn-bg: var(--accent-effective) !important;
+        --theme-mini-msg-bg: var(--message-bg) !important;
+
+        --interactive-bg-secondary-default: var(--surface-medium) !important;
+        --interactive-bg-secondary-hover: var(--surface-high) !important;
+        --interactive-label-primary-default: var(--text-main) !important;
+        --interactive-label-secondary-default: var(--text-secondary-color) !important;
+    }
+
+    :root.dark {
+        color-scheme: dark !important;
+
+        --bg-main: #1E1A16;
+        --sidebar-bg: #252019;
+        --surface-bright: #302920;
+        --surface-low: #29231C;
+        --surface-medium: #2C261E;
+        --surface-high: #362E24;
+        --surface-highest: #40362A;
+
+        --sidebar-button-hover: #342C22;
+        --sidebar-button-active: #3A3025;
+
+        --message-bg: #30281F;
+        --user-message-bg: #3D3020;
+
+        --text-main: #E8E0D5;
+        --text-secondary-color: #C4B8A8;
+        --text-tertiary-color: #9C8F7E;
+        --text-placeholder: #887C6C;
+
+        --border-color: #443A2F;
+        --border-enabled-color: #5A4C3D;
+
+        --scroll-bg: #54483A;
+        --scroll-hover: #6A5B49;
+
+        --disabled-button-bg: #40372D;
+        --disabled-button-text: #938777;
+
+        --accent-effective: color-mix(in srgb, var(--warm-accent) 76%, #FFD08A 24%);
+        --enabled-button-bg: var(--accent-effective);
+
+        --selection-bg: #5A4828;
+
+        --code-bg: #26231D;
+        --code-header-bg: #302A21;
+        --code-inline-bg: #393125;
+        --code-text: #CFD6D2;
+        --code-border: #4A4032;
+
+        --focus-color: #D9A04C;
+
+        --bg-primary: var(--sidebar-bg) !important;
+        --bg-secondary: var(--surface-medium) !important;
+        --bg-tertiary: var(--surface-high) !important;
+        --bg-elevated-primary: var(--surface-bright) !important;
+        --bg-elevated-secondary: var(--sidebar-bg) !important;
+        --bg-tooltip: var(--surface-high) !important;
+
+        --sidebar-surface-primary: var(--sidebar-bg) !important;
+        --sidebar-surface-secondary: var(--sidebar-button-hover) !important;
+        --sidebar-surface-tertiary: var(--surface-high) !important;
+
+        --main-surface-primary: var(--bg-main) !important;
+        --main-surface-secondary: var(--surface-medium) !important;
+        --main-surface-tertiary: var(--surface-high) !important;
+
+        --message-surface: var(--message-bg) !important;
+
+        --surface-primary: var(--bg-main) !important;
+        --surface-secondary: var(--surface-medium) !important;
+        --surface-tertiary: var(--surface-high) !important;
+        --surface-hover: var(--surface-high) !important;
+
+        --text-primary: var(--text-main) !important;
+        --text-secondary: var(--text-secondary-color) !important;
+        --text-tertiary: var(--text-tertiary-color) !important;
+
+        --border-light: var(--border-color) !important;
+        --border-medium: var(--border-enabled-color) !important;
+
+        --theme-secondary-btn-bg: var(--surface-high) !important;
+        --theme-submit-btn-bg: var(--accent-effective) !important;
+        --theme-mini-msg-bg: var(--message-bg) !important;
+
+        --interactive-bg-secondary-default: var(--surface-medium) !important;
+        --interactive-bg-secondary-hover: var(--surface-high) !important;
+        --interactive-label-primary-default: var(--text-main) !important;
+        --interactive-label-secondary-default: var(--text-secondary-color) !important;
+    }
+
+    html,
+    body,
+    html:not(.screen-arch),
+    html:not(.screen-arch) body {
+        background-color: var(--bg-main) !important;
+        color: var(--text-main) !important;
+    }
+
+    body,
+    button,
+    input,
+    textarea {
+        color: var(--text-main);
+    }
+
+    ::placeholder {
+        color: var(--text-placeholder) !important;
+        opacity: 1 !important;
+    }
+
+    ::selection {
+        background-color: var(--selection-bg) !important;
+        color: var(--text-main) !important;
+    }
+
+    .bg-token-main-surface-primary,
+    .relative.bg-token-main-surface-primary {
+        background-color: var(--bg-main) !important;
+    }
+
+    .bg-token-main-surface-secondary {
+        background-color: var(--surface-medium) !important;
+    }
+
+    .bg-token-main-surface-tertiary {
+        background-color: var(--surface-high) !important;
+    }
+
+    .from-token-main-surface-primary {
+        --tw-gradient-from: var(--bg-main) !important;
+    }
+
+    .bg-token-sidebar-surface-primary {
+        background-color: var(--sidebar-bg) !important;
+    }
+
+    .bg-token-sidebar-surface-secondary {
+        background-color: var(--sidebar-button-hover) !important;
+    }
+
+    .bg-token-bg-elevated-secondary {
+        background-color: var(--sidebar-bg) !important;
+    }
+
+    .from-token-sidebar-surface-primary {
+        --tw-gradient-from: var(--sidebar-bg) !important;
+    }
+
+    nav,
+    aside {
+        --sidebar-surface-primary: var(--sidebar-bg) !important;
+    }
+
+    nav .__menu-item:not([data-active]),
+    aside .__menu-item:not([data-active]) {
+        background-color: transparent;
+    }
+
+    .__menu-item {
+        --menu-item-open: var(--sidebar-button-hover);
+        --menu-item-highlighted: var(--sidebar-button-hover);
+        --menu-item-hover: var(--sidebar-button-hover);
+    }
+
+    .__menu-item:not(:disabled):not([data-disabled]):active:not(:has([data-trailing-button]:hover)),
+    .__menu-item:not(:disabled):not([data-disabled])[data-active],
+    .hover\:bg-token-bg-tertiary:hover {
+        background-color: var(--sidebar-button-hover) !important;
+    }
+
+    :is(.dark, .light) .dark\:bg-token-main-surface-secondary {
+        background-color: var(--sidebar-button-hover) !important;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .hover\:bg-token-main-surface-secondary:hover,
+        .dark\:hover\:bg-token-main-surface-secondary:hover:is(.dark *) {
+            background-color: var(--sidebar-button-hover) !important;
+        }
+    }
+
+    @media (min-width: 80rem) {
+        header#page-header {
+            background: transparent !important;
+        }
+    }
+
+    @media (max-width: 79.999rem) {
+        header#page-header {
+            background: var(--bg-main) !important;
+        }
+    }
+
+    .user-message-bubble-color {
+        background-color: color-mix(
+            in srgb,
+            var(--theme-user-msg-bg) calc((1 - var(--dynamic-user-message)) * 100%),
+            var(--user-message-bg) calc(var(--dynamic-user-message) * 100%)
+        ) !important;
+        color: var(--text-main) !important;
+    }
+
+    article,
+    .markdown,
+    [class*="markdown"] {
+        color: var(--text-main);
+    }
+
+    .markdown,
+    [class*="markdown"] {
+        line-height: 1.85;
+    }
+
+    .markdown p,
+    [class*="markdown"] p {
+        color: var(--text-main);
+    }
+
+    .markdown h1,
+    .markdown h2,
+    .markdown h3,
+    .markdown h4,
+    .markdown h5,
+    .markdown h6,
+    [class*="markdown"] h1,
+    [class*="markdown"] h2,
+    [class*="markdown"] h3,
+    [class*="markdown"] h4,
+    [class*="markdown"] h5,
+    [class*="markdown"] h6,
+    .markdown strong,
+    [class*="markdown"] strong {
+        color: var(--text-main);
+    }
+
+    .markdown blockquote,
+    [class*="markdown"] blockquote {
+        border-color: var(--border-enabled-color) !important;
+        color: var(--text-secondary-color);
+    }
+
+    .markdown hr,
+    [class*="markdown"] hr {
+        border-color: var(--border-color) !important;
+    }
+
+    :root.light .markdown a,
+    :root.light [class*="markdown"] a {
+        color: #AD5A05;
+    }
+
+    :root.light .markdown a:hover,
+    :root.light [class*="markdown"] a:hover {
+        color: #874604;
+    }
+
+    :root.dark .markdown a,
+    :root.dark [class*="markdown"] a {
+        color: #E5A441;
+    }
+
+    :root.dark .markdown a:hover,
+    :root.dark [class*="markdown"] a:hover {
+        color: #F1BB66;
+    }
+
+    form.group\/composer.w-full > div > div {
+        background-color: var(--surface-bright) !important;
+    }
+
+    form.group\/composer {
+        --main-surface-primary: var(--surface-bright);
+    }
+
+    textarea {
+        color: var(--text-main) !important;
+    }
+
+    .shadow-short:not(:is(.dark *)) {
+        background-color: var(--surface-bright) !important;
+    }
+
+    :is(.dark, .light) .shadow-short {
+        background-color: var(--surface-bright);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        button.__composer-pill--neutral:hover {
+            background-color: var(--sidebar-button-hover) !important;
+        }
+    }
+
+    button.__composer-pill--neutral[data-state="open"],
+    button.__composer-pill--neutral[data-is-open] {
+        background-color: var(--sidebar-button-hover) !important;
+    }
+
+    :is(.light, .dark) .btn-primary,
+    :is(.light, .dark) button[data-testid="send-button"],
+    :is(.light, .dark) button[class*="bg-token-text-primary"],
+    :is(.light, .dark) button[class*="bg-black"],
+    :is(.light, .dark) button[class*="bg-gray-900"] {
+        background-color: var(--accent-effective) !important;
+        color: #FFFFFF !important;
+        border-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    :is(.light, .dark) .btn-primary *,
+    :is(.light, .dark) button[data-testid="send-button"] *,
+    :is(.light, .dark) button[class*="bg-token-text-primary"] *,
+    :is(.light, .dark) button[class*="bg-black"] *,
+    :is(.light, .dark) button[class*="bg-gray-900"] * {
+        color: #FFFFFF !important;
+    }
+
+    :is(.light, .dark) .dark\:bg-white {
+        background-color: var(--accent-effective) !important;
+    }
+
+    button.btn.relative.btn-secondary.btn-small {
+        background-color: var(--accent-effective) !important;
+        color: #FFFFFF !important;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        :is(.light, .dark) .btn-primary:not(:disabled):hover,
+        :is(.light, .dark) button[data-testid="send-button"]:not(:disabled):hover,
+        :is(.light, .dark) button[class*="bg-token-text-primary"]:not(:disabled):hover,
+        :is(.light, .dark) button[class*="bg-black"]:not(:disabled):hover {
+            filter: brightness(0.93);
+            opacity: 1 !important;
+        }
+    }
+
+    :is(.light, .dark) .btn-primary:disabled,
+    :is(.light, .dark) .btn-primary[aria-disabled="true"],
+    :is(.light, .dark) .btn-primary[data-disabled],
+    :is(.light, .dark) button[data-testid="send-button"]:disabled,
+    :is(.light, .dark) button[data-testid="send-button"][aria-disabled="true"],
+    :is(.light, .dark) button[data-testid="send-button"][data-disabled],
+    :is(.light, .dark) button[class*="bg-token-text-primary"]:disabled,
+    :is(.light, .dark) button[class*="bg-token-text-primary"][aria-disabled="true"],
+    :is(.light, .dark) button[class*="bg-black"]:disabled,
+    :is(.light, .dark) button[class*="bg-black"][aria-disabled="true"],
+    :is(.light, .dark) button[class*="cursor-not-allowed"] {
+        background-color: var(--disabled-button-bg) !important;
+        color: var(--disabled-button-text) !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: none !important;
+        filter: none !important;
+        opacity: 1 !important;
+    }
+
+    :is(.light, .dark) .btn-primary:disabled *,
+    :is(.light, .dark) .btn-primary[aria-disabled="true"] *,
+    :is(.light, .dark) button[data-testid="send-button"]:disabled *,
+    :is(.light, .dark) button[data-testid="send-button"][aria-disabled="true"] *,
+    :is(.light, .dark) button[class*="cursor-not-allowed"] * {
+        color: var(--disabled-button-text) !important;
+    }
+
+    .btn-secondary {
+        background-color: var(--surface-bright) !important;
+        color: var(--text-main) !important;
+        border-color: var(--border-enabled-color) !important;
+    }
+
+    .radix-state-open\:bg-token-main-surface-secondary[data-state="open"] {
+        background-color: var(--sidebar-button-hover) !important;
+    }
+
+    @media (min-width: 768px) {
+        .md\:radix-state-active\:bg-token-main-surface-secondary[data-state="active"] {
+            background-color: var(--sidebar-button-hover) !important;
+        }
+    }
+
+    div[data-radix-menu-content] {
+        background-color: var(--surface-bright) !important;
+        color: var(--text-main) !important;
+        border-color: var(--border-color) !important;
+    }
+
+    [role="menu"],
+    [role="listbox"] {
+        --main-surface-primary: var(--surface-bright);
+        --main-surface-secondary: var(--surface-medium);
+        color: var(--text-main);
+    }
+
+    [data-radix-popper-content-wrapper] {
+        --main-surface-primary: var(--surface-bright);
+        --main-surface-secondary: var(--surface-medium);
+    }
+
+    :is(.dark, .light) :where([role="dialog"], [role="alertdialog"]) {
+        background-color: var(--bg-main) !important;
+        color: var(--text-main) !important;
+    }
+
+    div[data-testid="modal-settings"] > div > div > div {
+        background: var(--bg-main) !important;
+    }
+
+    #modal-settings [role="dialog"] div:has(> [data-settings-tab-list]) {
+        background-color: var(--sidebar-bg) !important;
+    }
+
+    #modal-settings [data-settings-tab-list] [role="tab"][data-state="active"],
+    #modal-settings [data-settings-tab-list] [role="tab"][data-state="inactive"]:hover {
+        background-color: var(--sidebar-button-hover) !important;
+    }
+
+    #modal-settings button[data-testid="close-button"] {
+        background-color: transparent !important;
+    }
+
+    #modal-settings button[data-testid="close-button"]:hover {
+        background-color: var(--sidebar-button-hover) !important;
+    }
+
+    :is(.dark, .light) button[role="switch"][data-state="checked"] {
+        background-color: var(--accent-effective) !important;
+    }
+
+    :is(.dark, .light) header#page-header [role="radiogroup"][aria-label="Select chat surface"] > :first-child {
+        background-color: var(--sidebar-bg) !important;
+    }
+
+    :is(.dark, .light) header#page-header [role="radiogroup"][aria-label="Select chat surface"] .bg-token-bg-primary {
+        background-color: var(--surface-bright) !important;
+    }
+
+    :is(.dark, .light) .bg-surface-primary {
+        background-color: var(--bg-main) !important;
+    }
+
+    :is(.dark, .light) .bg-surface-primary li[data-selected] > button:first-of-type {
+        background-color: var(--sidebar-button-hover) !important;
+    }
+
+    /* Code card outer shell */
+    .markdown div[class*="rounded"]:has(pre):has(button),
+    [class*="markdown"] div[class*="rounded"]:has(pre):has(button),
+    .markdown div[class*="overflow-hidden"]:has(pre):has(button),
+    [class*="markdown"] div[class*="overflow-hidden"]:has(pre):has(button) {
+        background: var(--code-bg) !important;
+        background-color: var(--code-bg) !important;
+        border: 1px solid var(--code-border) !important;
+        border-radius: 14px !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+    }
+
+    .markdown div[class*="rounded"]:has(pre):has(button) > *,
+    [class*="markdown"] div[class*="rounded"]:has(pre):has(button) > *,
+    .markdown div[class*="overflow-hidden"]:has(pre):has(button) > *,
+    [class*="markdown"] div[class*="overflow-hidden"]:has(pre):has(button) > * {
+        box-shadow: none !important;
+    }
+
+    /* Code card toolbar */
+    .markdown div[class*="rounded"]:has(pre):has(button) > div:first-child:not(:has(pre)),
+    [class*="markdown"] div[class*="rounded"]:has(pre):has(button) > div:first-child:not(:has(pre)),
+    .markdown div[class*="overflow-hidden"]:has(pre):has(button) > div:first-child:not(:has(pre)),
+    [class*="markdown"] div[class*="overflow-hidden"]:has(pre):has(button) > div:first-child:not(:has(pre)) {
+        background: var(--code-header-bg) !important;
+        background-color: var(--code-header-bg) !important;
+        color: var(--text-main) !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        border-bottom: 1px solid var(--code-border) !important;
+        box-shadow: none !important;
+    }
+
+    .markdown div:has(pre):has(button) > div > div:first-child:not(:has(pre)):has(button),
+    [class*="markdown"] div:has(pre):has(button) > div > div:first-child:not(:has(pre)):has(button),
+    .markdown div:has(pre):has(button) > div > div > div:first-child:not(:has(pre)):has(button),
+    [class*="markdown"] div:has(pre):has(button) > div > div > div:first-child:not(:has(pre)):has(button) {
+        background: var(--code-header-bg) !important;
+        background-color: var(--code-header-bg) !important;
+        border-color: var(--code-border) !important;
+        box-shadow: none !important;
+    }
+
+    .markdown div:has(pre) [class*="bg-token-main-surface-secondary"],
+    [class*="markdown"] div:has(pre) [class*="bg-token-main-surface-secondary"],
+    .markdown div:has(pre) [class*="bg-token-main-surface-tertiary"],
+    [class*="markdown"] div:has(pre) [class*="bg-token-main-surface-tertiary"] {
+        background-color: var(--code-header-bg) !important;
+    }
+
+    /* Code card body */
+    .markdown div:has(> pre),
+    [class*="markdown"] div:has(> pre),
+    .markdown div:has(> div > pre),
+    [class*="markdown"] div:has(> div > pre),
+    .markdown div:has(> div > div > pre),
+    [class*="markdown"] div:has(> div > div > pre) {
+        background-color: var(--code-bg) !important;
+    }
+
+    .markdown div[class*="flex"]:has(pre),
+    [class*="markdown"] div[class*="flex"]:has(pre),
+    .markdown div[class*="grid"]:has(pre),
+    [class*="markdown"] div[class*="grid"]:has(pre) {
+        background-color: var(--code-bg) !important;
+    }
+
+    .markdown pre,
+    [class*="markdown"] pre {
+        background-color: var(--code-bg) !important;
+        color: var(--code-text) !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .markdown pre code,
+    [class*="markdown"] pre code {
+        background-color: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+
+    /* Code card copy / toolbar controls */
+    :is(.light, .dark) .markdown div:has(pre) button,
+    :is(.light, .dark) [class*="markdown"] div:has(pre) button {
+        background: transparent !important;
+        background-color: transparent !important;
+        color: var(--text-secondary-color) !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        filter: none !important;
+        opacity: 1 !important;
+    }
+
+    :is(.light, .dark) .markdown div:has(pre) button *,
+    :is(.light, .dark) [class*="markdown"] div:has(pre) button * {
+        color: currentColor !important;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        :is(.light, .dark) .markdown div:has(pre) button:hover,
+        :is(.light, .dark) [class*="markdown"] div:has(pre) button:hover {
+            background-color: color-mix(in srgb, var(--accent-effective) 9%, transparent) !important;
+            color: var(--text-main) !important;
+            filter: none !important;
+        }
+    }
+
+    .markdown div:has(pre) > [class*="bg-token"]:has(pre),
+    [class*="markdown"] div:has(pre) > [class*="bg-token"]:has(pre),
+    .markdown div:has(pre) > [class*="bg-surface"]:has(pre),
+    [class*="markdown"] div:has(pre) > [class*="bg-surface"]:has(pre) {
+        background-color: var(--code-bg) !important;
+    }
+
+    .markdown div:has(pre):has(button) div:not(:has(pre)):has(button),
+    [class*="markdown"] div:has(pre):has(button) div:not(:has(pre)):has(button) {
+        --main-surface-primary: var(--code-header-bg) !important;
+        --main-surface-secondary: var(--code-header-bg) !important;
+        --main-surface-tertiary: var(--code-header-bg) !important;
+    }
+
+    :is(.dark, .light) .dark\:prose-invert :where(code):not(:where([class~="not-prose"] *)):not(:where(pre *)) {
+        background-color: var(--code-inline-bg) !important;
+        color: var(--text-main) !important;
+    }
+
+    /* Light syntax */
+    :root.light pre .hljs-comment,
+    :root.light pre .hljs-quote {
+        color: #93A1A1 !important;
+    }
+
+    :root.light pre .hljs-keyword,
+    :root.light pre .hljs-selector-tag,
+    :root.light pre .hljs-addition {
+        color: #B58900 !important;
+    }
+
+    :root.light pre .hljs-number,
+    :root.light pre .hljs-string,
+    :root.light pre .hljs-meta .hljs-string,
+    :root.light pre .hljs-literal,
+    :root.light pre .hljs-doctag,
+    :root.light pre .hljs-regexp {
+        color: #738900 !important;
+    }
+
+    :root.light pre .hljs-title,
+    :root.light pre .hljs-section,
+    :root.light pre .hljs-name,
+    :root.light pre .hljs-selector-id,
+    :root.light pre .hljs-selector-class {
+        color: #247AA5 !important;
+    }
+
+    :root.light pre .hljs-attribute,
+    :root.light pre .hljs-attr,
+    :root.light pre .hljs-variable,
+    :root.light pre .hljs-template-variable,
+    :root.light pre .hljs-class .hljs-title {
+        color: #A64D22 !important;
+    }
+
+    :root.light pre .hljs-symbol,
+    :root.light pre .hljs-bullet,
+    :root.light pre .hljs-subst,
+    :root.light pre .hljs-meta,
+    :root.light pre .hljs-selector-attr,
+    :root.light pre .hljs-selector-pseudo,
+    :root.light pre .hljs-link {
+        color: #666AAF !important;
+    }
+
+    :root.light pre .hljs-built_in,
+    :root.light pre .hljs-deletion {
+        color: #C9433E !important;
+    }
+
+    /* Dark syntax */
+    :root.dark pre .hljs-comment,
+    :root.dark pre .hljs-quote {
+        color: #938B7D !important;
+    }
+
+    :root.dark pre .hljs-keyword,
+    :root.dark pre .hljs-selector-tag {
+        color: #E5AD58 !important;
+    }
+
+    :root.dark pre .hljs-number,
+    :root.dark pre .hljs-string,
+    :root.dark pre .hljs-literal,
+    :root.dark pre .hljs-regexp {
+        color: #A7BD72 !important;
+    }
+
+    :root.dark pre .hljs-title,
+    :root.dark pre .hljs-section,
+    :root.dark pre .hljs-name {
+        color: #7CB8D5 !important;
+    }
+
+    :root.dark pre .hljs-attribute,
+    :root.dark pre .hljs-attr,
+    :root.dark pre .hljs-variable,
+    :root.dark pre .hljs-template-variable {
+        color: #D78965 !important;
+    }
+
+    :root.dark pre .hljs-symbol,
+    :root.dark pre .hljs-meta,
+    :root.dark pre .hljs-link {
+        color: #A9A3D9 !important;
+    }
+
+    :root.dark pre .hljs-built_in,
+    :root.dark pre .hljs-deletion {
+        color: #DB7770 !important;
+    }
+
+    .markdown table,
+    [class*="markdown"] table {
+        border-color: var(--border-color) !important;
+    }
+
+    .markdown th,
+    [class*="markdown"] th {
+        background-color: var(--surface-medium) !important;
+        color: var(--text-main) !important;
+        border-color: var(--border-color) !important;
+    }
+
+    .markdown td,
+    [class*="markdown"] td {
+        border-color: var(--border-color) !important;
+    }
+
+    .markdown tr:nth-child(even),
+    [class*="markdown"] tr:nth-child(even) {
+        background-color: color-mix(in srgb, var(--surface-medium) 55%, transparent);
+    }
+
+    *,
+    .dark:hover,
+    .light:hover {
+        scrollbar-color: var(--scroll-bg) transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--scroll-bg);
+        border-radius: 999px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--scroll-hover);
+    }
+
+    .content-fade::after {
+        background-color: var(--content-fade-bg, var(--bg-main)) !important;
+    }
+
+    :is(.dark, .light) #thread-bottom-container::after {
+        background-color: var(--bg-main) !important;
+    }
+
+    :is(.dark, .light) [class*="--vt-disclaimer"] .bg-token-main-surface-primary {
+        --main-surface-primary: var(--bg-main) !important;
+    }
+
+    :is(.dark, .light) #conversation-header-actions.translucent-surface {
+        background-color: transparent !important;
+        backdrop-filter: none !important;
+    }
+
+    :is(.dark, .light) #conversation-header-actions button[aria-label="Temporary chat"]:hover {
+        background-color: var(--surface-high) !important;
+    }
+
+    div[class="flex flex-row gap-2"] > button[aria-label] {
+        background: var(--accent-effective);
+    }
+
+    .mix-blend-darken {
+        mix-blend-mode: normal !important;
+    }
+
+    :is(.dark, .light) svg {
+        color: currentColor;
+    }
+
+    .border-token-border-light,
+    .border-token-border-medium {
+        border-color: var(--border-color) !important;
+    }
+
+    :focus-visible {
+        outline-color: var(--focus-color) !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    b,
+    strong {
+        font-weight: 700;
+    }
+}
