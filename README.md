@@ -76,6 +76,15 @@ The theme relies on a mix of ChatGPT design tokens and structural selectors. Cha
 
 If a future UI update introduces an unthemed grey/black surface, please open an issue with a screenshot, the affected component, Light/Dark mode, and browser + Stylus version when relevant.
 
+## Companion userscripts
+
+I also keep two **vibe-coded** long-chat helpers in [`userscripts/`](./userscripts/):
+
+- [`chatgpt-lazy-chat.user.js`](./userscripts/chatgpt-lazy-chat.user.js) — ChatGPT detach virtualization + HARD PAUSE + lightweight TOC/navigation.
+- [`gemini-lazy-chat.user.js`](./userscripts/gemini-lazy-chat.user.js) — Gemini TOC + conservative conditional detach.
+
+The userscripts document their references and licensing separately in [`userscripts/README.md`](./userscripts/README.md), including acknowledgement of [AlexSHamilton/chatgpt-lazy-chat-plusplus](https://github.com/AlexSHamilton/chatgpt-lazy-chat-plusplus) and [lyw123www/GptToc](https://github.com/lyw123www/GptToc).
+
 ## Notes
 
 - This is an unofficial community UserStyle and is not affiliated with or endorsed by OpenAI.
